@@ -15,30 +15,32 @@ void stopMotors(){
 
 void moveForward(int fspeed){
   analogWrite(13, 0);
-  analogWrite(12, fspeed);
+  analogWrite(12, fspeed * 2);
   analogWrite(14, 0);
-  analogWrite(27, fspeed);
+  analogWrite(27, fspeed * 2);
+  Serial.println("Moving forward with speed: " + String(fspeed));
+  // Add any additional logic for moving forward
 }
 
 void moveBackward(int bspeed){
-  analogWrite(13, bspeed);
+  analogWrite(13, bspeed * 2);
   analogWrite(12, 0);
-  analogWrite(14, bspeed);
+  analogWrite(14, bspeed * 2);
   analogWrite(27, 0);
 }
 
 void turnLeft(int lspeed){
   analogWrite(13, 0);
-  analogWrite(12, lspeed);
-  analogWrite(14, lspeed);
+  analogWrite(12, lspeed * 2);
+  analogWrite(14, lspeed * 2);
   analogWrite(27, 0);
 }
 
 void turnRight(int rspeed){
-  analogWrite(13, rspeed);
+  analogWrite(13, rspeed * 2);
   analogWrite(12, 0);
   analogWrite(14, 0);
-  analogWrite(27, rspeed);
+  analogWrite(27, rspeed * 2);
 }
 
 void setHue(int hue) {
