@@ -31,16 +31,16 @@ void moveBackward(int bspeed){
 
 void turnLeft(int lspeed){
   analogWrite(13, 0);
-  analogWrite(12, lspeed * 4);
-  analogWrite(14, lspeed * 4);
+  analogWrite(12, lspeed * 2.5);
+  analogWrite(14, lspeed * 2.5);
   analogWrite(27, 0);
 }
 
 void turnRight(int rspeed){
-  analogWrite(13, rspeed * 4);
+  analogWrite(13, rspeed * 2.5);
   analogWrite(12, 0);
   analogWrite(14, 0);
-  analogWrite(27, rspeed * 4);
+  analogWrite(27, rspeed * 2.5);
 }
 
 void setHue(int hue) {
