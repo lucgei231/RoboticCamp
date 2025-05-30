@@ -38,7 +38,7 @@ void turnRight(int rspeed){
   analogWrite(13, rspeed);
   analogWrite(12, 0);
   analogWrite(14, 0);
-  analogWrite(27, 255);
+  analogWrite(27, rspeed);
 }
 
 void setHue(int hue) {
