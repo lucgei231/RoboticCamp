@@ -7,7 +7,8 @@
                 "C:/Users/student/Documents/Arduino/libraries/**",
                 "C:/Users/Student/Documents/Arduino/libraries/FastLED/src/platforms/wasm/compiler/**",
                 "C:/Users/Student/Documents/Arduino/libraries/FastLED/src/**",
-                "${workspaceFolder}/libraries/**"
+                "${workspaceFolder}/libraries/**",
+                "${workspaceFolder}/libraries/**/src/"
             ],
             "defines": [
                 "_DEBUG",

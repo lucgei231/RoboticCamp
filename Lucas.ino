@@ -605,13 +605,39 @@ void handleRoot() {
 
 void setup(){
   Serial.begin(9600);
+  
+  // Set ESP32 to dual mode (AP+STA)
+  WiFi.mode(WIFI_AP_STA);
+  
+  // Start the Access Point
   WiFi.softAP("LucasPotato", "mypotato");
   Serial.print("AP IP Address: ");
   Serial.println(WiFi.softAPIP());
   
+  // Attempt to connect to STA network
+  WiFi.begin("mypotato", "coolpotato");
+  Serial.print("Connecting to STA network");
+  unsigned long startTime = millis();
+  while (WiFi.status() != WL_CONNECTED && (millis() - startTime) < 10000) {
+    delay(500);
+    Serial.print(".");
+  }
+  if(WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nConnected to STA network");
+    Serial.print("STA IP Address: ");
+    Serial.println(WiFi.localIP());
+  } else {
+    Serial.println("\nSTA connection failed, continuing with AP only");
+  }
+  
+  // Register mDNS with hostname "esp32" for both interfaces
   if (MDNS.begin("esp32")) {
     Serial.println("mDNS responder started: http://esp32.local/");
   }
+  else {
+    Serial.println("Error setting up mDNS responder");
+  }
+  
   server.on("/", handleRoot);
   server.begin();
 
