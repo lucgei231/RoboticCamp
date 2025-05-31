@@ -2,6 +2,7 @@
 #include <WebServer.h>
 #include <ESPmDNS.h>
 #include <WebSocketsServer.h>
+#include <WiFiManager.h> // Ensure you have the WiFiManager library installed
 
 WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer(81);
@@ -624,12 +625,23 @@ void setup(){
     delay(500);
     Serial.print(".");
   }
+  
   if(WiFi.status() == WL_CONNECTED) {
     Serial.println("\nConnected to STA network");
     Serial.print("STA IP Address: ");
     Serial.println(WiFi.localIP());
   } else {
-    Serial.println("\nSTA connection failed, continuing with AP only");
+    Serial.println("\nSTA connection failed, starting WiFiManager configuration portal");
+    WiFiManager wm;
+    wm.resetSettings(); // Optional: clear old settings
+    // The configuration portal will block until connected or timeout
+    if(!wm.startConfigPortal("LucasPotato_Config")) {
+      Serial.println("Failed to connect via WiFiManager");
+    }
+    else {
+      Serial.print("STA IP Address (after config): ");
+      Serial.println(WiFi.localIP());
+    }
   }
   
   // Register mDNS with hostname "esp32" for both interfaces
