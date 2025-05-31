@@ -7,6 +7,8 @@
 WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer(81);
 
+bool forwardMode = false; // Global flag to trigger infinite forward movement
+
 void stopMotors(){
   analogWrite(13, 0);
   analogWrite(12, 0);
@@ -20,7 +22,7 @@ void moveForward(int fspeed){
   analogWrite(14, 0);
   analogWrite(27, fspeed * 2);
   Serial.println("Moving forward with speed: " + String(fspeed));
-  // Add any additional logic for moving forward
+  // Additional logic for moving forward
 }
 
 void moveBackward(int bspeed){
@@ -609,6 +611,9 @@ void handleRoot() {
 void setup(){
   Serial.begin(9600);
   
+  // Set GPIO 0 as input with pull-up so button press is detected (LOW when pressed)
+  pinMode(0, INPUT_PULLUP);
+  
   // Set ESP32 to dual mode (AP+STA)
   WiFi.mode(WIFI_AP_STA);
   
@@ -634,7 +639,6 @@ void setup(){
     Serial.println("\nSTA connection failed, starting WiFiManager configuration portal");
     WiFiManager wm;
     wm.resetSettings(); // Optional: clear old settings
-    // The configuration portal will block until connected or timeout
     if(!wm.startConfigPortal("LucasPotato_Config")) {
       Serial.println("Failed to connect via WiFiManager");
     }
@@ -666,6 +670,19 @@ void setup(){
 }
 
 void loop(){
-  server.handleClient();
-  webSocket.loop();
+  // Check if a button on GPIO 0 is pressed (active LOW)
+  if(digitalRead(0) == LOW) {
+    forwardMode = true;
+  }
+  
+  if(forwardMode) {
+    // Continually move forward at full speed
+    moveForward(255);
+    delay(100); // small delay to prevent spamming
+  }
+  else {
+    // Normal operations remain active when not in infinite forward mode
+    server.handleClient();
+    webSocket.loop();
+  }
 }
