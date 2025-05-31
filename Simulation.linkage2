@@ -1,8 +1,8 @@
 <linkage2>
-	<program zoom="0.455166" xoffset="-287" yoffset="209" scalefactor="1.000000" units="Millimeters" backgroundtransparency="0.000000" backgroundscale="1.000000" xgrid="" ygrid=""/>
+	<program zoom="0.591716" xoffset="-204" yoffset="390" scalefactor="1.000000" units="Millimeters" backgroundtransparency="0.000000" backgroundscale="1.000000" xgrid="" ygrid=""/>
 	<connector id="20" selected="false" layer="16" x="-565.013604" y="7.652575" draw="true" color="6324288" usercolor="false"/>
 	<connector id="21" selected="false" layer="16" x="-163.470034" y="29.261318" draw="true" color="32768" usercolor="false"/>
-	<connector id="22" selected="false" layer="16" x="327.954922" y="49.193145" draw="true" color="16711680" usercolor="false"/>
+	<connector id="22" selected="false" layer="16" x="340.157480" y="77.871018" draw="true" color="16711680" usercolor="false"/>
 	<connector id="23" selected="false" layer="16" x="209.223930" y="136.748387" anchor="true" color="16711808" usercolor="false"/>
 	<connector id="24" selected="false" layer="16" x="-1133.884498" y="-24.759227" draw="true" color="6854344" usercolor="false"/>
 	<connector id="25" selected="false" layer="16" x="-1164.229596" y="136.748387" anchor="true" color="11012476" usercolor="false"/>
@@ -12,9 +12,9 @@
 	<connector id="29" selected="false" layer="16" x="-435.392672" y="-121.373027" anchor="true" input="true" rpm="15.000000" color="223719" usercolor="false"/>
 	<connector id="30" selected="false" layer="16" x="-688.428824" y="82.415397" draw="true" color="13123282" usercolor="false"/>
 	<connector id="31" selected="false" layer="16" x="-378.247795" y="71.497520" draw="true" color="223719" usercolor="false"/>
-	<connector id="32" selected="false" layer="16" x="164.900307" y="-206.601079" draw="true" color="12615935" usercolor="false"/>
-	<connector id="34" selected="false" layer="16" x="-1320.816637" y="-165.539249" draw="true" color="4243584" usercolor="false"/>
-	<connector id="36" selected="true" layer="16" x="-151.181102" y="-889.008294" draw="true" color="12599551" usercolor="false"/>
+	<connector id="32" selected="false" layer="16" x="164.900307" y="0.000000" draw="true" color="12615935" usercolor="false"/>
+	<connector id="34" selected="false" layer="16" x="-1298.851837" y="41.788876" draw="true" color="4243584" usercolor="false"/>
+	<connector id="36" selected="false" layer="16" x="-151.181102" y="-889.008294" draw="true" color="12599551" usercolor="false"/>
 	<connector id="37" selected="false" layer="16" x="-1037.004559" y="-925.350054" draw="true" color="2121760" usercolor="false"/>
 	<connector id="38" selected="false" layer="16" x="-532.742399" y="-116.271144" color="8405120" usercolor="false"/>
 	<Link id="0" selected="false" layer="16" linesize="1" shapetype="hull" color="16744448" usercolor="false">
@@ -122,7 +122,6 @@
 		<connector id="34"/>
 	</Link>
 	<selected>
-		<connector id="36"/>
 	</selected>
 	<background></background>
 </linkage2>
