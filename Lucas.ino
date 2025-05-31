@@ -612,8 +612,8 @@ void setup(){
   // Set ESP32 to dual mode (AP+STA)
   WiFi.mode(WIFI_AP_STA);
   
-  // Start the Access Point
-  WiFi.softAP("LucasPotato", "mypotato");
+  // Start the Access Point open (no password)
+  WiFi.softAP("LucasPotato");
   Serial.print("AP IP Address: ");
   Serial.println(WiFi.softAPIP());
   

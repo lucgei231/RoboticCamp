@@ -1,5 +1,5 @@
 <linkage2>
-	<program zoom="1.000000" xoffset="25" yoffset="-26" scalefactor="1.000000" units="Millimeters" backgroundtransparency="0.000000" backgroundscale="1.000000" xgrid="" ygrid=""/>
+	<program zoom="1.300000" xoffset="-68" yoffset="-26" scalefactor="1.000000" units="Millimeters" backgroundtransparency="0.000000" backgroundscale="1.000000" xgrid="" ygrid=""/>
 	<connector id="0" selected="false" layer="16" x="37.795276" y="-238.773090" anchor="true" color="16711680" usercolor="false"/>
 	<connector id="1" selected="false" layer="16" x="-118.345357" y="-29.085860" anchor="true" input="true" rpm="15.000000" color="12632064" usercolor="false"/>
 	<connector id="2" selected="false" layer="16" x="264.566929" y="-63.931465" color="6579300" usercolor="false"/>
