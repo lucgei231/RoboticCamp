@@ -609,6 +609,7 @@ void handleRoot() {
 }
 
 void setup(){
+  stopMotors();
   Serial.begin(9600);
   
   // Set GPIO 0 as input with pull-up so button press is detected (LOW when pressed)
